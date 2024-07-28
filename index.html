@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Results summary component</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    body {
+      background-color: rgb(255, 254, 254);
+      font-family: 'Hanken Grotesk', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0px;
+      position: relative;
+    }
+    .result, .summary {
+      background-color: hsl(180, 25%, 98%);
+      border-radius: 30px;
+      text-align: left;
+      padding: 30px;
+      flex: 1;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .summary{
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .result {
+      background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      color: hsl(0, 0%, 100%);
+      text-align: center;
+    }
+    .circle {
+      border-radius: 50%;
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0.3));
+      width: 110px;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+    }
+    .score-value {
+      font-size: 3em; 
+      font-weight:800px;
+    }
+    .score-text {
+      font-size: 0.8em; 
+    }
+    .summary-heading {
+      color: hsl(224, 30%, 27%);
+      font-size: larger;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .summary div {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .summary .icon {
+      width: 20px;
+      height: 20px;
+    }
+    .container-box1, .container-box2, .container-box3, .container-box4 {
+     display: flex;
+     flex-direction: row;
+     border-radius: 15px;
+     height: 50px;
+     width: 90%;
+     justify-content: space-between;
+     align-items: center; 
+     padding: 0 10px; 
+     margin-bottom: 10px; 
+     font-weight: 600;
+   }
+
+    .summary button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: hsl(224, 30%, 27%);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Hanken Grotesk', sans-serif;
+    }
+    .summary button:hover {
+      background-color: hsl(241, 81%, 54%);
+    }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="result">
+      <span style="color:hsl(241, 100%, 89%);">Your Result</span>
+      <div class="circle">
+        <div class="score-value">76</div>
+        <div class="score-text">of 100</div>
+      </div>
+      <span id="message">Great</span><br>
+      <span id="Percentage" style="color:hsl(241, 100%, 89%);">
+        You scored higher than 65% of <br>the people who have taken <br>these tests.
+      </span>
+    </div>
+    <div class="summary">
+      <section class="summary-heading">Summary</section>
+      <div class="container-box1" style="background-color: hsl(0, 100%, 67%,0.07);">
+        <img src="./assets/images/icon-reaction.svg" class="icon" alt="Reaction Icon">
+        <div class="reaction" style="color:hsl(0, 100%, 67%)">Reaction</div>
+        <div style="color:hsl(224, 30%, 27%)">80<span style="color:hsl(241, 100%, 89%);">/100</span></div>
+      </div>
+      <div class="container-box2" style="background-color:hsl(39, 100%, 56%,0.07);">
+        <img src="./assets/images/icon-memory.svg" class="icon" alt="Memory Icon">
+        <div class="memory" style="color:hsl(39, 100%, 56%)">Memory</div>
+        <div style="color:hsl(224, 30%, 27%)">92<span style="color:hsl(241, 100%, 89%);">/100</span></div>
+      </div>
+      <div class="container-box3" style="background-color: hsl(166, 100%, 37%,0.07);">
+        <img src="./assets/images/icon-verbal.svg"class="icon" alt="Verbal Icon">
+        <div class="verbal" style="color:hsl(166, 100%, 37%)">Verbal</div>
+        <div style="color:hsl(224, 30%, 27%)">61<span style="color:hsl(241, 100%, 89%);">/100</span></div>
+      </div>
+      <div class="container-box4" style="background-color: hsl(234, 85%, 45%,0.07);">
+        <img src="./assets/images/icon-visual.svg" class="icon" alt="Visual Icon">
+        <div class="visual" style="color:hsl(234, 85%, 45%)">Visual</div>
+        <div style="color:hsl(224, 30%, 27%)">72<span style="color:hsl(241, 100%, 89%);">/100</span></div>
+      </div>
+      <button type="submit">Continue</button>
+    </div>
+  </div>
+  <div class="attribution">
+    Code by <a href="https://www.linkedin.com/in/sree-yazhini-860917258?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Sree Yazhini.M</a>
+  </div>
+</body>
+</html>
